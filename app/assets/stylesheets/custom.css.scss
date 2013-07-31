@@ -44,3 +44,31 @@ $grayMediumLight: #eaeaea;
         }
     }
 }
+
+.microposts {
+    list-style: none;
+    margin: 10px 0 0 0;
+    li {
+        padding: 15px 0;
+        border-top: 1px solid #EDEDED;
+    }
+}
+
+.content {
+    display: block;
+}
+
+.timestamp {
+    color: gray;
+}
+
+.gravatar {
+    float: left;
+    margin-left: 10px;
+    aside {
+        textarea {
+            height: 100px;
+            margin-bottom: 5px;
+        }
+    }
+}

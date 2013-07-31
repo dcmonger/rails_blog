@@ -1,13 +1,23 @@
 <% content_for :title do  %>
     Ruby on Rails Tutorial Sample App
 <% end %>
-<div class="panel">
-    <h1>Welcome to the Sample App</h1>
-    <h2>
-        This is the home page for the
-        <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-        sample application.
-    </h2>
-    <%= link_to "Sign up now!", signup_path, class: "button large text-center centered" %>
-</div>
-
+<% if signed_in? %>
+    <section>
+        <%= render 'shared/user_info' %>
+    </section>
+    <section>
+        <%= render 'shared/micropost_form' %>
+    </section>
+    <h3>Micropost Feed</h3>
+    <%= render 'shared/feed' %>
+<% else %>
+    <div class="panel">
+        <h1>Welcome to the Sample App</h1>
+        <h2>
+            This is the home page for the
+            <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+            sample application.
+        </h2>
+        <%= link_to "Sign up now!", signup_path, class: "button large text-center centered" %>
+    </div>
+<% end %>
