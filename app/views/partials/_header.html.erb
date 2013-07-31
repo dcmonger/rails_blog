@@ -16,11 +16,11 @@
             <li><%= link_to "Help", help_path %></li>
             <li class="divider hide-for-small"></li>
             <% if signed_in? %>
-                <li><%= link_to "Users", '#' %></li>
+                <li><%= link_to "Users", users_path %></li>
                 <li class="has-dropdown"><a href="#">Account</a>
                     <ul class="dropdown">
                         <li><%= link_to 'Profile', current_user  %></li>
-                        <li><%= link_to 'Settings', '#'  %></li>
+                        <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
                         <li><%= link_to 'Sign Out', signout_path, method: "delete" %></li>
                     </ul>
                 </li>
